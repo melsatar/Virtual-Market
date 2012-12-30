@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".User_Login" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/txt_login_screen"
+        android:paddingTop="15pt"
+        android:textSize="10pt" >
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/txt_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:ems="10"
+        android:hint="@string/txt_username"
+        android:inputType="textEmailAddress"
+        android:textSize="9pt" >
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/txt_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:ems="10"
+        android:hint="@string/txt_pass"
+        android:inputType="textPassword"
+        android:textSize="9pt" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_login_btn"
+        
+        android:textSize="10pt" />
+
+</LinearLayout>

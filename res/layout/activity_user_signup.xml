@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".User_Signup" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/txt_signup_screen"
+        android:paddingTop="15pt"
+        android:textSize="10pt" >
+
+    </TextView>
+    
+     <EditText
+         android:id="@+id/txt_username"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_gravity="right"
+         android:ems="10"
+         android:hint="@string/txt_username"
+         android:inputType="text"
+         android:textSize="9pt" />
+
+    <EditText
+        android:id="@+id/txt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:ems="10"
+        android:hint="@string/txt_email"
+        android:inputType="textEmailAddress"
+        android:textSize="9pt" >
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/txt_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:ems="10"
+        android:hint="@string/txt_pass"
+        android:inputType="textPassword"
+        android:textSize="9pt" />
+    
+        <EditText
+            android:id="@+id/txt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:hint="@string/txt_phone"
+            android:inputType="phone"
+            android:textSize="9pt" />
+        
+        <Spinner
+            android:id="@+id/sp_cities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"/>
+         <Spinner
+            android:id="@+id/sp_areas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"/>
+        
+        <EditText
+            android:id="@+id/txt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textLongMessage" >
+
+            <requestFocus />
+        </EditText>
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_signup_btn"
+        
+        android:textSize="10pt" />
+
+</LinearLayout>
