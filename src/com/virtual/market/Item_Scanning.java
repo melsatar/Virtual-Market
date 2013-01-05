@@ -1,5 +1,6 @@
 package com.virtual.market;
 
+import java.util.Currency;
 
 import com.parse.GetCallback;
 import com.parse.GetDataCallback;
@@ -21,25 +22,18 @@ import android.widget.TextView;
 
 public class Item_Scanning extends Activity {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item__scanning);
-        
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_item__scanning);
 
-        
-        Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-        intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-        startActivityForResult(intent, 0);
-       
+		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+		intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+		startActivityForResult(intent, 0);
 
+	}
 
-        
-        
-        
-    }
-    
-    public void onActivityResult(int requestCode, int resultCode, Intent intent) 
+	public void onActivityResult(int requestCode, int resultCode, Intent intent) 
     {	
     	//String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
     	final TextView Item_ID  =(TextView) findViewById(R.id.Item_ID);
@@ -47,8 +41,8 @@ public class Item_Scanning extends Activity {
         //final ImageView Item_Image  =(TextView) findViewById(R.id.item_image);
         final TextView Item_Cat  =(TextView) findViewById(R.id.item_cat);
         final TextView Item_Price  =(TextView) findViewById(R.id.item_price);
-        final Button AddtoCart  =(Button) findViewById(R.id.addtoCart);
-
+        final Button btn_AddtoCart  =(Button) findViewById(R.id.addtoCart);
+        final ParseUser currentuser = ParseUser.getCurrentUser();
 
         
         
@@ -67,18 +61,7 @@ public class Item_Scanning extends Activity {
     	             	Item_Cat.setText(" Category : "+object.getString("item_desc"));
     	             	Item_Price.setText(" Price : "+object.getString("item_price"));
     	             	
-    	             	AddtoCart.setOnClickListener(new OnClickListener() 
-    					{
-    						public void onClick(View arg0) 
-    						{
-    							ParseObject Cart = new ParseObject("Cart");
-    							Cart.put("item_amount", "100");
-    							Cart.put("item_id", "NrCjHQfi8C");
-    							Cart.put("user_id", "d6RNqEu17U");
-    							Cart.saveInBackground();
-    							
-    						}
-    					});
+    	             	
     	             	
     	             	
     	             } else {
@@ -93,7 +76,24 @@ public class Item_Scanning extends Activity {
     	      
 				
     	   }
+    	
+    	OnClickListener lsn_add = new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				ParseObject Cart = new ParseObject("Cart");
+				Cart.put("item_amount", 100);
+				Cart.put("item_id", "NrCjHQfi8C");
+				Cart.put("user_id", currentuser.getObjectId() );
+				Cart.saveInBackground();
+				
+
+			}
+		};
+		
+		btn_AddtoCart.setOnClickListener(lsn_add);
+		
     	}
 
-  
 }
