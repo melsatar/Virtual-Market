@@ -50,7 +50,6 @@ public class UserFirstActivity extends Activity {
 
 		OnClickListener lsn_signup = new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
@@ -65,7 +64,6 @@ public class UserFirstActivity extends Activity {
 
 		OnClickListener lsn_login = new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();

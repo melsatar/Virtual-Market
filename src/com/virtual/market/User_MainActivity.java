@@ -19,7 +19,6 @@ public class User_MainActivity extends Activity {
         
         OnClickListener lsn_Scan = new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
@@ -34,7 +33,6 @@ public class User_MainActivity extends Activity {
 
 		OnClickListener lsn_Reports = new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
@@ -49,7 +47,6 @@ public class User_MainActivity extends Activity {
 		
 		OnClickListener lsn_data = new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();

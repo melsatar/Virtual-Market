@@ -47,7 +47,6 @@ public class User_Signup extends Activity {
 		final Spinner spCities = (Spinner) findViewById(R.id.sp_cities);
 		spCities.setOnItemSelectedListener(new OnItemSelectedListener() {
 
-			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				String City_Name = spCities.getItemAtPosition(arg2).toString();
@@ -67,7 +66,6 @@ public class User_Signup extends Activity {
 				});
 			}
 
-			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
 			}
@@ -75,7 +73,6 @@ public class User_Signup extends Activity {
 
 		OnClickListener lsn_signup = new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				System.out.println("Here");

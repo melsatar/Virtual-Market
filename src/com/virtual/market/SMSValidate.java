@@ -23,7 +23,6 @@ public class SMSValidate extends Activity {
 		final EditText ET = (EditText) findViewById(R.id.txt_code);
 
 		BT.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View arg0) {
 				if (s.equals(ET.getText().toString())) {
 					ParseUser currentUser = ParseUser.getCurrentUser();
