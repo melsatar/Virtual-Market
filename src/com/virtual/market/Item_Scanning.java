@@ -14,6 +14,8 @@ import com.parse.ParseUser;
 import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,7 +45,7 @@ public class Item_Scanning extends Activity
     	//String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
     	final TextView Item_ID  =(TextView) findViewById(R.id.Item_ID);
     	final TextView Item_title  =(TextView) findViewById(R.id.item_title);
-        //final ImageView Item_Image  =(TextView) findViewById(R.id.item_image);
+        final ImageView Item_Image  =(ImageView) findViewById(R.id.item_image);
         final TextView Item_Cat  =(TextView) findViewById(R.id.item_cat);
         final TextView Item_Price  =(TextView) findViewById(R.id.item_price);
         final Button btn_AddtoCart  =(Button) findViewById(R.id.addtoCart);
@@ -68,6 +70,19 @@ public class Item_Scanning extends Activity
     	             	Item_title.setText(" Product : "+object.getString("item_name"));
     	             	Item_Cat.setText(" Category : "+object.getString("item_desc"));
     	             	Item_Price.setText(" Price : "+Product_price);
+    	             	
+    	             	 ParseFile image = (ParseFile) object.get("item_image");
+                         image.getDataInBackground(new GetDataCallback() {
+
+                             @Override
+                             public void done(byte[] imageInBytes, ParseException pEx) {
+                                 // TODO Auto-generated method stub
+                                 Bitmap bmp = BitmapFactory.decodeByteArray(imageInBytes, 0, imageInBytes.length);
+                                 Item_Image.setImageBitmap(bmp);
+                             }
+                         });
+    	             	
+    	             	
     	             	
     	             	setProduct_Price(Product_price);
     	             	
@@ -116,10 +131,6 @@ public class Item_Scanning extends Activity
 		btn_AddtoCart.setOnClickListener(lsn_add);
 		
     	}
-	
-		
-	
-	
 	
 		void setProduct_Price(String PP)
 		{

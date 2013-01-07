@@ -52,7 +52,7 @@ public class User_MainActivity extends Activity {
 				Intent intent = new Intent();
 				intent.setClass(User_MainActivity.this, Historical_Data.class);
 				startActivityForResult(intent, Request_code);
-				
+			
 
 			}
 		};
