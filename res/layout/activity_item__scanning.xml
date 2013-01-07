@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <TextView
         android:id="@+id/Item_ID"
         android:layout_width="wrap_content"
@@ -17,13 +17,12 @@
         android:layout_height="wrap_content"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
     <ImageView
         android:id="@+id/item_image"
-        android:layout_width="171dp"
-        android:layout_height="184dp"
+        android:layout_width="114dp"
+        android:layout_height="224dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
         android:src="@drawable/ic_launcher" />
 
     <TextView
@@ -39,11 +38,17 @@
         android:layout_height="wrap_content"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
     <Button
         android:id="@+id/addtoCart"
         android:layout_width="318dp"
         android:layout_height="wrap_content"
         android:text="Add to cart" />
+
+    <Button
+        android:id="@+id/addanthr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add another product" />
 
 </LinearLayout>
