@@ -102,16 +102,16 @@ public class Shopping_cart extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				System.out.println(itemDetails.size());
-		    	int totalSum = 0;
+		    	Double totalSum = 0.0;
 		    	for (int i=0;i<itemDetails.size();i++){
 		        	
-		        	int itemPrice = 0;
-		        	itemPrice=Integer.valueOf(itemDetails.get(i).getPrice())*Integer.valueOf(itemDetails.get(i).getAmount());
+		        	Double itemPrice = 0.0;
+		        	itemPrice=Double.valueOf(itemDetails.get(i).getPrice())*Integer.valueOf(itemDetails.get(i).getAmount());
 		        	totalSum += itemPrice;
 		        	System.out.println(totalSum);
 		        
 		        }
-		        final int summation = totalSum;
+		        final Double summation = totalSum;
 		        
 				// TODO Auto-generated method stub
 				AlertDialog diaBoxmessage = ShowDialogBox("Total sum "+ summation+" L.E."+"\n\norder shipment ID  023456");
