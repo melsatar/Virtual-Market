@@ -1,14 +1,8 @@
 package com.virtual.market;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
+
 
 public class Historical_Data extends Activity {
 	/** Called when the activity is first created. */
@@ -16,7 +10,7 @@ public class Historical_Data extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historical__data);
-        
+        /*
         ArrayList<ItemDetails> image_details = GetSearchResults();
         
         final ListView lv1 = (ListView) findViewById(R.id.listV_main);
@@ -28,10 +22,10 @@ public class Historical_Data extends Activity {
             	ItemDetails obj_itemDetails = (ItemDetails)o;
         		Toast.makeText(Historical_Data.this, "You have chosen : " + " " + obj_itemDetails.getName(), Toast.LENGTH_LONG).show();
         	}  
-        });
+        });*/
     }
     
-    private ArrayList<ItemDetails> GetSearchResults(){
+    /*private ArrayList<ItemDetails> GetSearchResults(){
     	ArrayList<ItemDetails> results = new ArrayList<ItemDetails>();
     	
     	ItemDetails item_details = new ItemDetails();
@@ -43,5 +37,5 @@ public class Historical_Data extends Activity {
     	
     	
     	return results;
-    }
+    }*/
 }

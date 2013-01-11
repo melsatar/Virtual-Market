@@ -21,11 +21,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class Shopping_cart extends Activity {
 	
@@ -41,7 +38,7 @@ public class Shopping_cart extends Activity {
     	System.out.println(userId);
     	
     	final ListView lv1 = (ListView) findViewById(R.id.listV_main);
-
+    	
     	
     	ParseQuery getShoppingCart = new ParseQuery("Cart");
     	getShoppingCart.whereEqualTo("user_id", userId);

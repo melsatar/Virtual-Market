@@ -10,21 +10,19 @@ import android.widget.Button;
 
 public class User_MainActivity extends Activity {
 
-    protected static final int Request_code = 0;
-
+	
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user__main);
-        
-        OnClickListener lsn_Scan = new OnClickListener() {
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_user__main);
+
+		OnClickListener lsn_Scan = new OnClickListener() {
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 				intent.setClass(User_MainActivity.this, Item_Scanning.class);
-				startActivityForResult(intent, Request_code);
-			
+				startActivity(intent);
 
 			}
 		};
@@ -37,46 +35,44 @@ public class User_MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 				intent.setClass(User_MainActivity.this, User_Reports.class);
-				startActivityForResult(intent, Request_code);
-			
+				startActivity(intent);
 
 			}
 		};
 		Button btn_Reports = (Button) findViewById(R.id.btn_Reports);
 		btn_Reports.setOnClickListener(lsn_Reports);
-		
+
 		OnClickListener lsn_data = new OnClickListener() {
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 				intent.setClass(User_MainActivity.this, Historical_Data.class);
-				startActivityForResult(intent, Request_code);
-			
+				startActivity(intent);
 
 			}
 		};
 		Button btn_data = (Button) findViewById(R.id.btn_historical);
 		btn_data.setOnClickListener(lsn_data);
-		
+
 		OnClickListener lsn_cart = new OnClickListener() {
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 				intent.setClass(User_MainActivity.this, Shopping_cart.class);
-				startActivityForResult(intent, Request_code);
+				startActivity(intent);
 
 			}
 		};
-		Button btn_cart = (Button) findViewById(R.id.btn_cart);
+		Button btn_cart = (Button) findViewById(R.id.btn_viewCart);
 		btn_cart.setOnClickListener(lsn_cart);
-		
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_user__main, menu);
-        return true;
-    }
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_user__main, menu);
+		return true;
+	}
 }

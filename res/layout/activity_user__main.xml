@@ -18,7 +18,7 @@
             android:text="Scan QR" />
 
         <Button
-            android:id="@+id/btn_Cart"
+            android:id="@+id/btn_viewCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

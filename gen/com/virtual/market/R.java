@@ -26,7 +26,6 @@ public final class R {
         public static final int Item_ID=0x7f070001;
         public static final int addanthr=0x7f070007;
         public static final int addtoCart=0x7f070006;
-        public static final int btn_Cart=0x7f070011;
         public static final int btn_Reports=0x7f070013;
         public static final int btn_cart=0x7f070008;
         public static final int btn_historical=0x7f070012;
@@ -34,6 +33,7 @@ public final class R {
         public static final int btn_scan=0x7f070010;
         public static final int btn_signup=0x7f070014;
         public static final int btn_verify=0x7f07000c;
+        public static final int btn_viewCart=0x7f070011;
         public static final int check_out=0x7f070009;
         public static final int item_amount=0x7f07001c;
         public static final int item_cat=0x7f070004;
