@@ -52,9 +52,9 @@ public class ItemListBaseAdapter extends BaseAdapter {
 		holder.txt_itemName.setText(itemDetailsArrayList.get(position).getName());
 		holder.txt_itemDescription.setText(itemDetailsArrayList.get(position).getItemDescription());
 		holder.txt_itemPrice.setText(Integer.valueOf(itemDetailsArrayList.get(position).getPrice())+" L.E.");
-		holder.txt_itemAmount.setText(itemDetailsArrayList.get(position).getAmount());
+		holder.txt_itemAmount.setText("You asked for " + itemDetailsArrayList.get(position).getAmount() +" items of " + itemDetailsArrayList.get(position).getName());
 		holder.itemImage.setImageBitmap(itemDetailsArrayList.get(position).getBmp());
-
+		
 		return convertView;
 	}
 

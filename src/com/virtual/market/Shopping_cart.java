@@ -64,10 +64,9 @@ public class Shopping_cart extends Activity {
 									item.setItemDescription(object.getString("item_desc"));
 									item.setName(object.getString("item_name"));
 									item.setPrice(object.getString("item_price"));
+									item.setAmount(object.getNumber("item_amount").toString());
 									ParseFile image = (ParseFile) object.get("item_image");
-									
 									image.getDataInBackground(new GetDataCallback() {
-
 										@Override
 										public void done(byte[] imageInBytes,ParseException pEx) {
 											// TODO Auto-generated method stub
@@ -75,11 +74,11 @@ public class Shopping_cart extends Activity {
 											imageInBytes, 0,
 											imageInBytes.length);
 											item.setBmp(bmp);
-											
+											itemDetails.add(item);
+											lv1.setAdapter(new ItemListBaseAdapter(Shopping_cart.this, itemDetails));
 											}
 										});
-									itemDetails.add(item);
-									lv1.setAdapter(new ItemListBaseAdapter(Shopping_cart.this, itemDetails));
+									
 									System.out.println(item);
 									}
 								}
