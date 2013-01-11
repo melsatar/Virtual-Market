@@ -25,14 +25,14 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class Shopping_cart extends Activity {
-	
+	static ArrayList<ItemDetails>  itemDetails;
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
         
-        final ArrayList<ItemDetails>  itemDetails= new ArrayList<ItemDetails>(); 
+        itemDetails= new ArrayList<ItemDetails>(); 
     	ParseUser current_user = ParseUser.getCurrentUser();
     	String userId= current_user.getObjectId();
     	System.out.println(userId);
@@ -94,24 +94,25 @@ public class Shopping_cart extends Activity {
 				
 				
 			});
-
-    	int totalSum = 0;
-    	for (int i=0;i<itemDetails.size();i++){
-        	
-        	int itemPrice = 0;
-        	itemPrice=Integer.valueOf(itemDetails.get(i).getPrice())*Integer.valueOf(itemDetails.get(i).getAmount());
-        	totalSum += itemPrice;
-        	System.out.println(totalSum);
-        
-        }
-        final int summation = totalSum;
-        
+    	
               
         Button checkout= (Button) findViewById(R.id.check_out);
         OnClickListener checkout_lsn = new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
+				System.out.println(itemDetails.size());
+		    	int totalSum = 0;
+		    	for (int i=0;i<itemDetails.size();i++){
+		        	
+		        	int itemPrice = 0;
+		        	itemPrice=Integer.valueOf(itemDetails.get(i).getPrice())*Integer.valueOf(itemDetails.get(i).getAmount());
+		        	totalSum += itemPrice;
+		        	System.out.println(totalSum);
+		        
+		        }
+		        final int summation = totalSum;
+		        
 				// TODO Auto-generated method stub
 				AlertDialog diaBoxmessage = ShowDialogBox("Total sum "+ summation+" L.E."+"\n\norder shipment ID  023456");
 				diaBoxmessage.show();

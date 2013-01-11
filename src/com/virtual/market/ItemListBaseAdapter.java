@@ -43,18 +43,19 @@ public class ItemListBaseAdapter extends BaseAdapter {
 			holder.txt_itemPrice = (TextView) convertView.findViewById(R.id.item_price);
 			holder.txt_itemAmount=(TextView) convertView.findViewById(R.id.item_amount);
 			holder.itemImage = (ImageView) convertView.findViewById(R.id.item_image);
+			holder.txt_total = (TextView) convertView.findViewById(R.id.items_total);
 
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		
+		Double total = Double.valueOf(itemDetailsArrayList.get(position).getPrice()) * Integer.valueOf(itemDetailsArrayList.get(position).getAmount());
 		holder.txt_itemName.setText(itemDetailsArrayList.get(position).getName());
 		holder.txt_itemDescription.setText(itemDetailsArrayList.get(position).getItemDescription());
 		holder.txt_itemPrice.setText(Integer.valueOf(itemDetailsArrayList.get(position).getPrice())+" L.E.");
 		holder.txt_itemAmount.setText("You asked for " + itemDetailsArrayList.get(position).getAmount() +" items of " + itemDetailsArrayList.get(position).getName());
 		holder.itemImage.setImageBitmap(itemDetailsArrayList.get(position).getBmp());
-		
+		holder.txt_total.setText("Total items cost= "+total.toString() +" L.E.");
 		return convertView;
 	}
 
@@ -64,5 +65,6 @@ public class ItemListBaseAdapter extends BaseAdapter {
 		TextView txt_itemPrice;
 		TextView txt_itemAmount;
 		ImageView itemImage;
+		TextView txt_total;
 	}
 }

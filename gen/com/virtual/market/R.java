@@ -42,8 +42,9 @@ public final class R {
         public static final int item_name=0x7f07001a;
         public static final int item_price=0x7f070005;
         public static final int item_title=0x7f070002;
+        public static final int items_total=0x7f07001d;
         public static final int listV_main=0x7f070000;
-        public static final int menu_settings=0x7f07001d;
+        public static final int menu_settings=0x7f07001e;
         public static final int sp_areas=0x7f070018;
         public static final int sp_cities=0x7f070017;
         public static final int txt_address=0x7f070019;
