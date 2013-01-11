@@ -52,7 +52,7 @@ public class Shopping_cart extends Activity {
 						final ItemDetails item = new ItemDetails();
 						String itemId= objectList.get(i).getString("item_id");
 						System.out.println(itemId);
-						item.setAmount(objectList.get(i).getString("item_amount"));
+						item.setAmount(objectList.get(i).getNumber("item_amount").toString());
 						ParseQuery itemInfo = new ParseQuery("Item");
 						itemInfo.whereEqualTo("objectId", itemId);
 						itemInfo.getFirstInBackground(new GetCallback() {
@@ -64,7 +64,6 @@ public class Shopping_cart extends Activity {
 									item.setItemDescription(object.getString("item_desc"));
 									item.setName(object.getString("item_name"));
 									item.setPrice(object.getString("item_price"));
-									item.setAmount(object.getNumber("item_amount").toString());
 									ParseFile image = (ParseFile) object.get("item_image");
 									image.getDataInBackground(new GetDataCallback() {
 										@Override

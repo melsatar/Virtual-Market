@@ -145,7 +145,7 @@ public class Item_Scanning extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent cart_intent = new Intent();
-				cart_intent.setClass(Item_Scanning.this, Historical_Data.class);
+				cart_intent.setClass(Item_Scanning.this, Shopping_cart.class);
 				startActivity(cart_intent);
 
 			}

@@ -52,7 +52,7 @@ public class ItemListBaseAdapter extends BaseAdapter {
 		Double total = Double.valueOf(itemDetailsArrayList.get(position).getPrice()) * Integer.valueOf(itemDetailsArrayList.get(position).getAmount());
 		holder.txt_itemName.setText(itemDetailsArrayList.get(position).getName());
 		holder.txt_itemDescription.setText(itemDetailsArrayList.get(position).getItemDescription());
-		holder.txt_itemPrice.setText(Integer.valueOf(itemDetailsArrayList.get(position).getPrice())+" L.E.");
+		holder.txt_itemPrice.setText(Double.valueOf(itemDetailsArrayList.get(position).getPrice())+" L.E.");
 		holder.txt_itemAmount.setText("You asked for " + itemDetailsArrayList.get(position).getAmount() +" items of " + itemDetailsArrayList.get(position).getName());
 		holder.itemImage.setImageBitmap(itemDetailsArrayList.get(position).getBmp());
 		holder.txt_total.setText("Total items cost= "+total.toString() +" L.E.");
