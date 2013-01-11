@@ -21,5 +21,6 @@
     <string name="title_activity_item__scanning">Item_Scanning</string>
     <string name="title_activity_user__reports">User_Reports</string>
     <string name="title_activity_historical__data">Historical_Data</string>
+    <string name="title_activity_shopping_cart">Shopping Cart</string>
 
 </resources>

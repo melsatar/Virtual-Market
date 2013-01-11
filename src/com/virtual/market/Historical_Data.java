@@ -38,7 +38,7 @@ public class Historical_Data extends Activity {
     	item_details.setName("Pizza");
     	item_details.setItemDescription("Spicy Chiken Pizza");
     	item_details.setPrice("RS 310.00");
-    	item_details.setImageNumber(1);
+//    	item_details.setImageNumber(1);
     	results.add(item_details);
     	
     	

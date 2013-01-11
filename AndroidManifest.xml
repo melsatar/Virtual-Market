@@ -85,8 +85,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Historical_Data"
-            android:label="@string/title_activity_historical__data" >
+            android:name=".Shopping_cart"
+            android:label="@string/title_activity_shopping_cart" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

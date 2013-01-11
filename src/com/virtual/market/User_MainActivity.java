@@ -50,7 +50,7 @@ public class User_MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
-				intent.setClass(User_MainActivity.this, Historical_Data.class);
+				intent.setClass(User_MainActivity.this, Shopping_cart.class);
 				startActivityForResult(intent, Request_code);
 			
 

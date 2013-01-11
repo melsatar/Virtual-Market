@@ -1,17 +1,13 @@
 package com.virtual.market;
 
-import java.util.Currency;
-
 import com.parse.GetCallback;
 import com.parse.GetDataCallback;
-import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
-import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;

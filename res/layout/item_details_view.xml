@@ -4,29 +4,37 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 	<ImageView 
-   		android:id="@+id/photo"
+   		android:id="@+id/item_image"
    		android:layout_width="wrap_content"
    		android:layout_height="wrap_content"
 		android:paddingRight="15dp"
 		android:paddingTop="10dp" />
-	<TextView android:id="@+id/name"
+	<TextView android:id="@+id/item_name"
 		android:textSize="14sp" 
 		android:textStyle="bold" 
 		android:textColor="#FFFF00" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
-		android:layout_toRightOf="@id/photo"/>
-	<TextView android:id="@+id/cityState"
+		android:layout_toRightOf="@id/item_image"/>
+	<TextView android:id="@+id/item_description"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
-		android:layout_below="@id/name"
-		android:layout_toRightOf="@id/photo" />
-	<TextView android:id="@+id/phone" 
+		android:layout_below="@id/item_name"
+		android:layout_toRightOf="@id/item_image" />
+	<TextView android:id="@+id/item_price" 
 		android:textSize="19sp" 
 		android:textStyle="bold" 
 		android:textColor="#32cd32" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
-		android:layout_below="@id/cityState"
-		android:layout_toRightOf="@id/photo" />
+		android:layout_below="@id/item_description"
+		android:layout_toRightOf="@id/item_image" />
+	<TextView android:id="@+id/item_amount" 
+		android:textSize="19sp" 
+		android:textStyle="bold" 
+		android:textColor="#32cd32" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/item_image" />
+	
 </RelativeLayout>

@@ -12,30 +12,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ItemListBaseAdapter extends BaseAdapter {
-	private static ArrayList<ItemDetails> itemDetailsrrayList;
-	
-	private Integer[] imgid = {
-			R.drawable.p1,
-			R.drawable.bb2,
-			R.drawable.p2,
-			R.drawable.bb5,
-			R.drawable.bb6,
-			R.drawable.d1
-			};
+	private static ArrayList<ItemDetails> itemDetailsArrayList;
 	
 	private LayoutInflater l_Inflater;
 
 	public ItemListBaseAdapter(Context context, ArrayList<ItemDetails> results) {
-		itemDetailsrrayList = results;
+		itemDetailsArrayList = results;
 		l_Inflater = LayoutInflater.from(context);
 	}
 
 	public int getCount() {
-		return itemDetailsrrayList.size();
+		return itemDetailsArrayList.size();
 	}
 
 	public Object getItem(int position) {
-		return itemDetailsrrayList.get(position);
+		return itemDetailsArrayList.get(position);
 	}
 
 	public long getItemId(int position) {
@@ -47,20 +38,22 @@ public class ItemListBaseAdapter extends BaseAdapter {
 		if (convertView == null) {
 			convertView = l_Inflater.inflate(R.layout.item_details_view, null);
 			holder = new ViewHolder();
-			holder.txt_itemName = (TextView) convertView.findViewById(R.id.name);
-			holder.txt_itemDescription = (TextView) convertView.findViewById(R.id.cityState);
-			holder.txt_itemPrice = (TextView) convertView.findViewById(R.id.phone);
-			holder.itemImage = (ImageView) convertView.findViewById(R.id.photo);
+			holder.txt_itemName = (TextView) convertView.findViewById(R.id.item_name);
+			holder.txt_itemDescription = (TextView) convertView.findViewById(R.id.item_description);
+			holder.txt_itemPrice = (TextView) convertView.findViewById(R.id.item_price);
+			holder.txt_itemAmount=(TextView) convertView.findViewById(R.id.item_amount);
+			holder.itemImage = (ImageView) convertView.findViewById(R.id.item_image);
 
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
-		holder.txt_itemName.setText(itemDetailsrrayList.get(position).getName());
-		holder.txt_itemDescription.setText(itemDetailsrrayList.get(position).getItemDescription());
-		holder.txt_itemPrice.setText(itemDetailsrrayList.get(position).getPrice());
-		holder.itemImage.setImageResource(imgid[itemDetailsrrayList.get(position).getImageNumber() - 1]);
+		holder.txt_itemName.setText(itemDetailsArrayList.get(position).getName());
+		holder.txt_itemDescription.setText(itemDetailsArrayList.get(position).getItemDescription());
+		holder.txt_itemPrice.setText(Integer.valueOf(itemDetailsArrayList.get(position).getPrice())+" L.E.");
+		holder.txt_itemAmount.setText(itemDetailsArrayList.get(position).getAmount());
+		holder.itemImage.setImageBitmap(itemDetailsArrayList.get(position).getBmp());
 
 		return convertView;
 	}
@@ -69,6 +62,7 @@ public class ItemListBaseAdapter extends BaseAdapter {
 		TextView txt_itemName;
 		TextView txt_itemDescription;
 		TextView txt_itemPrice;
+		TextView txt_itemAmount;
 		ImageView itemImage;
 	}
 }

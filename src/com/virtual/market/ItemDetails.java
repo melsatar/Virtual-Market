@@ -1,5 +1,7 @@
 package com.virtual.market;
 
+import android.graphics.Bitmap;
+
 public class ItemDetails {
 	
 	public String getName() {
@@ -14,23 +16,34 @@ public class ItemDetails {
 	public void setItemDescription(String itemDescription) {
 		this.itemDescription = itemDescription;
 	}
+
+
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public Bitmap getBmp() {
+		return bmp;
+	}
+	public void setBmp(Bitmap bmp) {
+		this.bmp = bmp;
+	}
+
 	public String getPrice() {
 		return price;
 	}
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public int getImageNumber() {
-		return imageNumber;
-	}
-	public void setImageNumber(int imageNumber) {
-		this.imageNumber = imageNumber;
-	}
-	
+
 	private String name ;
 	private String itemDescription;
 	private String price;
-	private int imageNumber;
+	private String amount;
+	private Bitmap bmp;
 
 	
 }
