@@ -54,6 +54,7 @@ public class Shopping_cart extends Activity {
 						System.out.println(itemId);
 						item.setAmount(objectList.get(i).getNumber("item_amount").toString());
 						ParseQuery itemInfo = new ParseQuery("Item");
+						itemInfo.setCachePolicy(ParseQuery.CachePolicy.NETWORK_ELSE_CACHE);
 						itemInfo.whereEqualTo("objectId", itemId);
 						itemInfo.getFirstInBackground(new GetCallback() {
 							public void done(ParseObject object,ParseException e) {

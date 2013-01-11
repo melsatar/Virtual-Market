@@ -59,6 +59,7 @@ public class Item_Scanning extends Activity {
 						.getStringExtra("SCAN_RESULT_FORMAT");
 
 				ParseQuery query = new ParseQuery("Item");
+				query.setCachePolicy(ParseQuery.CachePolicy.NETWORK_ELSE_CACHE);
 				query.getInBackground(Product_ID, new GetCallback() {
 					public void done(final ParseObject object, ParseException e) {
 						if (e == null) {
