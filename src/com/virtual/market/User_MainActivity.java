@@ -50,7 +50,7 @@ public class User_MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
-				intent.setClass(User_MainActivity.this, Shopping_cart.class);
+				intent.setClass(User_MainActivity.this, Historical_Data.class);
 				startActivityForResult(intent, Request_code);
 			
 
@@ -58,6 +58,20 @@ public class User_MainActivity extends Activity {
 		};
 		Button btn_data = (Button) findViewById(R.id.btn_historical);
 		btn_data.setOnClickListener(lsn_data);
+		
+		OnClickListener lsn_cart = new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(User_MainActivity.this, Shopping_cart.class);
+				startActivityForResult(intent, Request_code);
+
+			}
+		};
+		Button btn_cart = (Button) findViewById(R.id.btn_cart);
+		btn_cart.setOnClickListener(lsn_cart);
+		
     }
 
     @Override

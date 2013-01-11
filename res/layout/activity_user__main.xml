@@ -16,14 +16,22 @@
             android:layout_gravity="center"
             android:layout_marginTop="130dp"
             android:text="Scan QR" />
-
+
+        <Button
+            android:id="@+id/btn_Cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="View myCart" />
+
         <Button
             android:id="@+id/btn_historical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="My Cart" />
+            android:text="Historical Data" />
 
         <Button
             android:id="@+id/btn_Reports"
@@ -32,7 +40,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:text="Reports" />
-
     </LinearLayout>
 
 </LinearLayout>
