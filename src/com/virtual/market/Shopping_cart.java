@@ -33,10 +33,10 @@ public class Shopping_cart extends Activity {
         setContentView(R.layout.activity_shopping_cart);
         
         itemDetails= new ArrayList<ItemDetails>(); 
-    	ParseUser current_user = ParseUser.getCurrentUser();
+    	final ParseUser current_user = ParseUser.getCurrentUser();
     	String userId= current_user.getObjectId();
     	System.out.println(userId);
-    	
+    	   	
     	final ListView lv1 = (ListView) findViewById(R.id.listV_main);
     	
     	
@@ -106,6 +106,27 @@ public class Shopping_cart extends Activity {
 		    	for (int i=0;i<itemDetails.size();i++){
 		        	
 		        	Double itemPrice = 0.0;
+		        	String itemName=itemDetails.get(i).getName();
+		        	final String itemAmount=itemDetails.get(i).getAmount();
+		        	ParseQuery updateItemQuantity = new ParseQuery("Item");
+		        	updateItemQuantity.whereEqualTo("item_name", itemName);
+		        	
+		        	updateItemQuantity.getFirstInBackground(new GetCallback(){
+						public void done(ParseObject object,ParseException e) {
+							if (object == null) {
+								Log.d("item_info","The get First request failed.");
+							} else {
+								String itemStock=object.get("item_amount").toString();
+								System.out.println(itemStock);
+								Number currentItemStock = Integer.valueOf(itemStock)-Integer.valueOf(itemAmount);
+								System.out.println(currentItemStock);
+								object.put("item_amount", currentItemStock);
+								object.saveInBackground();
+							}
+						}
+					});
+						// TODO Auto-generated catch block
+					
 		        	itemPrice=Double.valueOf(itemDetails.get(i).getPrice())*Integer.valueOf(itemDetails.get(i).getAmount());
 		        	totalSum += itemPrice;
 		        	System.out.println(totalSum);
@@ -113,9 +134,33 @@ public class Shopping_cart extends Activity {
 		        }
 		        final Double summation = totalSum;
 		        
-				// TODO Auto-generated method stub
-				AlertDialog diaBoxmessage = ShowDialogBox("Total sum "+ summation+" L.E."+"\n\norder shipment ID  023456");
-				diaBoxmessage.show();
+		        ParseObject bill = new ParseObject("Bill");
+		        bill.put("total_cost",totalSum.toString());
+		        
+		        bill.put("user_id", current_user.getObjectId().toString());
+		        bill.saveInBackground();
+		        ParseQuery billID= new ParseQuery("Bill");
+		        billID.whereEqualTo("user_id", current_user.getObjectId().toString());
+		        billID.getFirstInBackground(new GetCallback() {
+					
+					@Override
+					public void done(ParseObject object, ParseException e) {
+						// TODO Auto-generated method stub
+						if (object == null) {
+							Log.d("bill was not saved","The get First request failed");
+						} else {
+							AlertDialog diaBoxmessage = ShowDialogBox("Total sum "+ summation + " L.E."+"\n\n Bill ID: "+ object.getObjectId().toString());
+							
+							diaBoxmessage.show();
+						}
+							
+						
+					}
+				});
+		       
+		        
+//		        System.out.println(bill.getObjectId().toString());
+				
 				
 			}
         };
