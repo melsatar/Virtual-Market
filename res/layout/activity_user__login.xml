@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/txt_login_screen"
-        android:paddingTop="15pt"
         android:textSize="10pt" >
 
     </TextView>
@@ -20,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/txt_username"
         android:inputType="textEmailAddress"
@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="@string/txt_pass"
         android:inputType="textPassword"
@@ -41,8 +42,16 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/txt_login_btn"
-        
         android:textSize="10pt" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="215dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_launcher" />
 
 </LinearLayout>

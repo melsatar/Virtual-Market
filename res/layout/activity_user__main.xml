@@ -9,12 +9,18 @@
         android:layout_gravity="center_vertical"
         android:orientation="vertical" >
 
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
         <Button
             android:id="@+id/btn_scan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="20dp"
             android:text="Scan QR" />
 
         <Button
@@ -22,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:text="View myCart" />
 
         <Button
@@ -30,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:text="Historical Data" />
 
         <Button
@@ -38,8 +44,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:text="Reports" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="215dp"
+            android:layout_height="142dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_launcher" />
+
     </LinearLayout>
 
 </LinearLayout>

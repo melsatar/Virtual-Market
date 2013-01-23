@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/txt_signup_screen"
-        android:paddingTop="15pt"
         android:textSize="10pt" >
 
     </TextView>
@@ -20,6 +19,7 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:layout_gravity="right"
+         android:layout_marginTop="15dp"
          android:ems="10"
          android:hint="@string/txt_username"
          android:inputType="text"
@@ -30,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="@string/txt_email"
         android:inputType="textEmailAddress"
@@ -42,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="@string/txt_pass"
         android:inputType="textPassword"
@@ -52,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="@string/txt_phone"
             android:inputType="phone"
@@ -61,19 +64,27 @@
             android:id="@+id/sp_cities"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"/>
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:ems="10" />
+
          <Spinner
-            android:id="@+id/sp_areas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"/>
+             android:id="@+id/sp_areas"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="5dp"
+             android:textSize="22sp"
+             android:ems="10" />
         
         <EditText
             android:id="@+id/txt_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:ems="10"
-            android:inputType="textLongMessage" >
+            android:hint="Enter your Address"
+            android:inputType="textLongMessage"
+            android:textSize="22sp" >
 
             <requestFocus />
         </EditText>
@@ -82,8 +93,8 @@
         android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/txt_signup_btn"
-        
         android:textSize="10pt" />
 
 </LinearLayout>

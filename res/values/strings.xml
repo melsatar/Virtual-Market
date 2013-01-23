@@ -13,7 +13,7 @@
     <string name="title_activity_user__signup">User_Signup</string>
     <string name="title_activity_user__main">User_MainActivity</string>
     <string name="title_activity_smsvalidate">SMSValidate</string>
-    <string name="txt_signup_screen">Register</string>
+    <string name="txt_signup_screen">Registeration</string>
     <string name="txt_phone">Enter you mobile number</string>
     <string name="txt_username">Enter your user name</string>
     <string name="txt_validate_message">Please enter the validaton code</string>
