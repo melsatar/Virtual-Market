@@ -1,5 +1,7 @@
 package com.virtual.market;
 
+import com.parse.ParseUser;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class User_MainActivity extends Activity {
 
@@ -15,6 +18,9 @@ public class User_MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user__main);
+		TextView username = (TextView) findViewById(R.id.txt_name);
+		ParseUser current_user = ParseUser.getCurrentUser();
+		username.setText(current_user.getUsername());
 
 		OnClickListener lsn_Scan = new OnClickListener() {
 
