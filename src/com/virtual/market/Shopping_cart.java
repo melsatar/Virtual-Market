@@ -1,6 +1,9 @@
 package com.virtual.market;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.parse.FindCallback;
@@ -11,6 +14,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -42,6 +46,7 @@ public class Shopping_cart extends Activity {
     	
     	ParseQuery getShoppingCart = new ParseQuery("Cart");
     	getShoppingCart.whereEqualTo("user_id", userId);
+    	getShoppingCart.whereEqualTo("bill_id", null);
     	getShoppingCart.findInBackground(new FindCallback() {
 			
 			@Override
@@ -136,22 +141,71 @@ public class Shopping_cart extends Activity {
 		        
 		        ParseObject bill = new ParseObject("Bill");
 		        bill.put("total_cost",totalSum.toString());
+		        Calendar c = new GregorianCalendar();
+		        c.set(Calendar.HOUR_OF_DAY, 0); //anything 0 - 23
+		        c.set(Calendar.MINUTE, 0);
+		        c.set(Calendar.SECOND, 0);
 		        
 		        bill.put("user_id", current_user.getObjectId().toString());
+		        bill.put("bill_status","done");
+		        bill.put("payment_status","pending");
+		        bill.put("bill_date", c.getTime().toLocaleString());
 		        bill.saveInBackground();
 		        ParseQuery billID= new ParseQuery("Bill");
 		        billID.whereEqualTo("user_id", current_user.getObjectId().toString());
+		        //billID.whereEqualTo("bill_date", c.getTime().toLocaleString());
 		        billID.getFirstInBackground(new GetCallback() {
 					
 					@Override
-					public void done(ParseObject object, ParseException e) {
+					public void done(final ParseObject object, ParseException e) {
 						// TODO Auto-generated method stub
 						if (object == null) {
 							Log.d("bill was not saved","The get First request failed");
 						} else {
-							AlertDialog diaBoxmessage = ShowDialogBox("Total sum "+ summation + " L.E."+"\n\n Bill ID: "+ object.getObjectId().toString());
 							
-							diaBoxmessage.show();
+							//getShoppingCart.put("createdAt", java.util.Date.parse("8/1/2013"));
+							
+							ParseQuery cart = new ParseQuery("Cart");
+							cart.whereEqualTo("user_id", current_user.getObjectId().toString());
+							cart.findInBackground(new FindCallback() {
+								
+								@Override
+								public void done(List<ParseObject> objects, ParseException e) {
+									for (int i = 0; i < objects.size(); i++) {
+										final ParseObject ShoppingCart = new ParseObject("Cart");
+										ShoppingCart.put("user_id", current_user.getObjectId().toString());
+										System.out.println(current_user.getObjectId().toString());
+										ShoppingCart.put("item_id",objects.get(i).getString("item_id"));
+										System.out.println(objects.get(i).getString("item_id"));
+										ShoppingCart.put("item_amount", objects.get(i).getNumber("item_amount"));
+										ShoppingCart.put("bill_id", "1");
+										System.out.println(objects.get(i).getNumber("item_amount"));
+										System.out.println(object.getObjectId().toString());
+										final String bill_id = object.getObjectId().toString();
+										ShoppingCart.saveInBackground(new SaveCallback() {
+										
+											@Override
+											public void done(ParseException e) {
+												// TODO Auto-generated method stub
+												//System.out.println(object.getObjectId().toString());
+												ShoppingCart.put("bill_id", bill_id);
+												
+												ShoppingCart.saveInBackground();
+											}
+										});
+										
+									}
+									AlertDialog diaBoxmessage = ShowDialogBox("Total sum "+ summation + " L.E."+"\n\n Bill ID: "+ object.getObjectId().toString());
+									
+									diaBoxmessage.show();
+									// TODO Auto-generated method stub
+									
+									
+								}
+							});
+							
+							
+						
 						}
 							
 						
