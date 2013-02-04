@@ -153,6 +153,7 @@ public class Shopping_cart extends Activity {
 		        bill.saveInBackground();
 		        ParseQuery billID= new ParseQuery("Bill");
 		        billID.whereEqualTo("user_id", current_user.getObjectId().toString());
+		        billID.orderByDescending("createdAt");
 		        //billID.whereEqualTo("bill_date", c.getTime().toLocaleString());
 		        billID.getFirstInBackground(new GetCallback() {
 					
